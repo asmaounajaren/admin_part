@@ -4,16 +4,57 @@ import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
 import { Publish } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector} from "react-redux";
+import {useState} from "react";
+
+import { useEffect, useMemo } from "react";
+import { userRequest } from "../../requestMethods";
 
 export default function Product() {
     const location= useLocation();
     const productId = location.pathname.split("/")[2];
+    const [pStats, setPStats] = useState([]);
     const product = useSelector((state) =>
     state.product.products.find((product) => product._id === productId)
     );
- 
-    return (
+    // const MONTHS = useMemo(
+    //     () => [
+    //         "Jan",
+    //         "Feb",
+    //         "Mar",
+    //         "Apr",
+    //         "May",
+    //         "Jun",
+    //         "Jul",
+    //         "Agu",
+    //         "Sep",
+    //         "Oct",
+    //         "Nov",
+    //         "Dec",
+    //     ],
+    //     []
+    // );
+    // useEffect(() => {
+    //     const getStats = async () => {
+    //         try {
+    //             const res = await userRequest.get("orders/income?pid=" + productId);
+    //             const list = res.data.sort((a,b)=>{
+    //                 return a._id - b._id
+    //             })
+    //             list.map((item) =>
+    //                 setPStats((prev) => [
+    //                     ...prev,
+    //                     { name: MONTHS[item._id - 1], Sales: item.total },
+    //                 ])
+    //                 );
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //         };
+    //         getStats();
+    //     }, [productId, MONTHS]);
+    
+return (
     <div className="product">
         <div className="productTitleContainer">
         <h1 className="productTitle">Product</h1>
@@ -22,9 +63,9 @@ export default function Product() {
         </Link>
         </div>
         <div className="productTop">
-            <div className="productTopLeft">
-                <Chart data={productData} dataKey="Sales" title="Sales Performance"/>
-            </div>
+            {/* <div className="productTopLeft">
+                <Chart data={pStats} dataKey="Sales" title="Sales Performance"/>
+            </div> */}
             <div className="productTopRight">
                 <div className="productInfoTop">
                     <img src={product.img} alt="" className="productInfoImg" />
@@ -48,13 +89,13 @@ export default function Product() {
                     <label>Product Name</label>
                     <input type="text" placeholder={product.title} />
                     <label>Description</label>
-                    <input type="text" placeholder={product.desc} />
+                    <textarea  name="text" rows="4" cols="50" placeholder={product.desc}></textarea>
                     <label>Product Price</label>
                     <input type="text" placeholder={product.price} />
                 </div>
                 <div className="productFormRight">
                     <div className="productUpload">
-                        <img src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="productUploadImg" />
+                        <img src={product.img} alt="" className="productUploadImg" />
                         <label for="file">
                             <Publish/>
                         </label>
