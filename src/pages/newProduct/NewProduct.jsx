@@ -23,7 +23,7 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Categories</label>
-          <input type="text" placeholder="Marketing,Ecomm,..." />
+          <input type="text" placeholder="Marketing, Ecomm,..." />
         </div>
         <button className="addProductButton">Create</button>
       </form>
