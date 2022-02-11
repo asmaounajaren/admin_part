@@ -71,7 +71,6 @@ export default function NewProduct() {
   }
 
 
-  console.log(file);
 
   return (
     <div className="newProduct">
