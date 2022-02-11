@@ -4,17 +4,17 @@ import {login} from "../../redux/apiCalls";
 import styled from "styled-components";
 
 const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-  &:disabled{
-    color:black;
-    cursor:not-allowed;
-  }
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    &:disabled{
+        color:black;
+        cursor:not-allowed;
+    }
 `;
 const Login =()=>{
     const [username, setUsername] = useState("");
