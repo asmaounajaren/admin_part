@@ -72,23 +72,7 @@ export const userData = [
         "https://i.ibb.co/PcgS808/fatlogo.png",
       email: "code@gmail.com",
       transaction: "$120.00",
-    },
-    {
-      id: 2,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      transaction: "$120.00",
-    },
-    {
-      id: 3,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      transaction: "$120.00",
-    },
+    }
    
  
   ];
